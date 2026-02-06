@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { 
   ChevronDown, 
   ChevronUp, 
@@ -55,10 +56,15 @@ interface TeamTableProps {
 }
 
 export function TeamTable({ searchQuery }: TeamTableProps) {
+  const navigate = useNavigate();
   const [sortField, setSortField] = useState<SortField>("createdAt");
   const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+
+  const handleViewTeam = (teamId: string) => {
+    navigate(`/team/${teamId}`);
+  };
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -205,7 +211,10 @@ export function TeamTable({ searchQuery }: TeamTableProps) {
                     </div>
                   </td>
                   <td className="p-4">
-                    <span className="font-medium text-foreground hover:text-primary transition-colors cursor-pointer">
+                    <span 
+                      className="font-medium text-foreground hover:text-primary transition-colors cursor-pointer"
+                      onClick={() => handleViewTeam(team.teamId)}
+                    >
                       {team.name}
                     </span>
                   </td>
@@ -270,7 +279,7 @@ export function TeamTable({ searchQuery }: TeamTableProps) {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end" className="w-40">
-                        <DropdownMenuItem className="gap-2">
+                        <DropdownMenuItem className="gap-2" onClick={() => handleViewTeam(team.teamId)}>
                           <Eye className="w-4 h-4" /> 查看详情
                         </DropdownMenuItem>
                         <DropdownMenuItem className="gap-2">
