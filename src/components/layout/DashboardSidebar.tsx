@@ -36,7 +36,7 @@ export function DashboardSidebar({ activeItem, onItemClick }: DashboardSidebarPr
   return (
     <aside 
       className={cn(
-        "relative flex flex-col h-screen glass-card border-r border-border/50 transition-all duration-300",
+        "sticky top-0 flex flex-col h-screen glass-card border-r border-border/50 transition-all duration-300 shrink-0",
         collapsed ? "w-20" : "w-64"
       )}
     >
