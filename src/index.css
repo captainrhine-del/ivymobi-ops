@@ -26,7 +26,7 @@
     --muted: 240 10% 18%;
     --muted-foreground: 220 10% 55%;
 
-    --accent: 220 80% 60%;
+    --accent: 220 70% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 50%;
@@ -38,12 +38,12 @@
 
     --radius: 0.75rem;
 
-    /* Custom tokens for crypto style */
+    /* Custom tokens for crypto style - Light blue to deep blue gradient */
     --glow-primary: 199 89% 60%;
-    --glow-accent: 220 80% 60%;
+    --glow-accent: 220 70% 50%;
     --surface-glass: 240 10% 12%;
-    --gradient-start: 330 100% 60%;
-    --gradient-end: 280 80% 55%;
+    --gradient-start: 195 90% 55%;
+    --gradient-end: 220 70% 45%;
 
     /* Sidebar tokens */
     --sidebar-background: 240 10% 8%;
@@ -69,7 +69,7 @@
     --secondary-foreground: 220 15% 85%;
     --muted: 240 10% 18%;
     --muted-foreground: 220 10% 55%;
-    --accent: 220 80% 60%;
+    --accent: 220 70% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -87,8 +87,8 @@
   body {
     @apply bg-background text-foreground antialiased;
     background-image: 
-      radial-gradient(ellipse at top, hsl(220 80% 60% / 0.08), transparent 50%),
-      radial-gradient(ellipse at bottom right, hsl(199 89% 60% / 0.05), transparent 50%),
+      radial-gradient(ellipse at top, hsl(220 70% 50% / 0.1), transparent 50%),
+      radial-gradient(ellipse at bottom right, hsl(195 90% 55% / 0.06), transparent 50%),
       linear-gradient(180deg, hsl(240 10% 6%) 0%, hsl(240 10% 4%) 100%);
     background-attachment: fixed;
     min-height: 100vh;
