@@ -16,8 +16,8 @@
     --popover: 240 10% 8%;
     --popover-foreground: 220 15% 90%;
 
-    /* Magenta as primary accent */
-    --primary: 330 100% 60%;
+    /* Light Blue as primary accent */
+    --primary: 199 89% 60%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 10% 15%;
@@ -26,7 +26,7 @@
     --muted: 240 10% 18%;
     --muted-foreground: 220 10% 55%;
 
-    --accent: 280 80% 55%;
+    --accent: 220 80% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 50%;
@@ -34,13 +34,13 @@
 
     --border: 240 10% 20%;
     --input: 240 10% 15%;
-    --ring: 330 100% 60%;
+    --ring: 199 89% 60%;
 
     --radius: 0.75rem;
 
     /* Custom tokens for crypto style */
-    --glow-primary: 330 100% 60%;
-    --glow-accent: 280 80% 55%;
+    --glow-primary: 199 89% 60%;
+    --glow-accent: 220 80% 60%;
     --surface-glass: 240 10% 12%;
     --gradient-start: 330 100% 60%;
     --gradient-end: 280 80% 55%;
@@ -48,12 +48,12 @@
     /* Sidebar tokens */
     --sidebar-background: 240 10% 8%;
     --sidebar-foreground: 220 15% 75%;
-    --sidebar-primary: 330 100% 60%;
+    --sidebar-primary: 199 89% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 10% 15%;
     --sidebar-accent-foreground: 220 15% 90%;
     --sidebar-border: 240 10% 18%;
-    --sidebar-ring: 330 100% 60%;
+    --sidebar-ring: 199 89% 60%;
   }
 
   .dark {
@@ -63,19 +63,19 @@
     --card-foreground: 220 15% 90%;
     --popover: 240 10% 8%;
     --popover-foreground: 220 15% 90%;
-    --primary: 330 100% 60%;
+    --primary: 199 89% 60%;
     --primary-foreground: 0 0% 100%;
     --secondary: 240 10% 15%;
     --secondary-foreground: 220 15% 85%;
     --muted: 240 10% 18%;
     --muted-foreground: 220 10% 55%;
-    --accent: 280 80% 55%;
+    --accent: 220 80% 60%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
     --border: 240 10% 20%;
     --input: 240 10% 15%;
-    --ring: 330 100% 60%;
+    --ring: 199 89% 60%;
   }
 }
 
@@ -87,8 +87,8 @@
   body {
     @apply bg-background text-foreground antialiased;
     background-image: 
-      radial-gradient(ellipse at top, hsl(280 80% 55% / 0.08), transparent 50%),
-      radial-gradient(ellipse at bottom right, hsl(330 100% 60% / 0.05), transparent 50%),
+      radial-gradient(ellipse at top, hsl(220 80% 60% / 0.08), transparent 50%),
+      radial-gradient(ellipse at bottom right, hsl(199 89% 60% / 0.05), transparent 50%),
       linear-gradient(180deg, hsl(240 10% 6%) 0%, hsl(240 10% 4%) 100%);
     background-attachment: fixed;
     min-height: 100vh;
