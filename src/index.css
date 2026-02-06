@@ -16,8 +16,8 @@
     --popover: 230 15% 10%;
     --popover-foreground: 210 20% 95%;
 
-    /* Vibrant Orange as primary accent */
-    --primary: 28 95% 55%;
+    /* Vibrant Yellow-Orange to Red-Orange gradient */
+    --primary: 35 95% 55%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 230 15% 18%;
@@ -26,7 +26,7 @@
     --muted: 230 12% 22%;
     --muted-foreground: 210 15% 60%;
 
-    --accent: 20 90% 50%;
+    --accent: 15 90% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 75% 55%;
@@ -34,16 +34,16 @@
 
     --border: 225 15% 25%;
     --input: 230 15% 18%;
-    --ring: 28 95% 55%;
+    --ring: 35 95% 55%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens for crypto style - Orange to deep orange gradient */
-    --glow-primary: 28 95% 55%;
-    --glow-accent: 20 90% 50%;
+    /* Custom tokens - Yellow-Orange to Red-Orange gradient */
+    --glow-primary: 35 95% 55%;
+    --glow-accent: 15 90% 55%;
     --surface-glass: 230 15% 14%;
-    --gradient-start: 35 95% 55%;
-    --gradient-end: 15 90% 50%;
+    --gradient-start: 45 95% 55%;
+    --gradient-end: 10 90% 55%;
 
     /* Success/Warning colors */
     --success: 160 70% 45%;
@@ -52,12 +52,12 @@
     /* Sidebar tokens */
     --sidebar-background: 230 15% 9%;
     --sidebar-foreground: 210 15% 80%;
-    --sidebar-primary: 28 95% 55%;
+    --sidebar-primary: 35 95% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 230 15% 18%;
     --sidebar-accent-foreground: 210 20% 95%;
     --sidebar-border: 225 15% 22%;
-    --sidebar-ring: 28 95% 55%;
+    --sidebar-ring: 35 95% 55%;
   }
 
   .dark {
@@ -67,19 +67,19 @@
     --card-foreground: 210 20% 95%;
     --popover: 230 15% 10%;
     --popover-foreground: 210 20% 95%;
-    --primary: 28 95% 55%;
+    --primary: 35 95% 55%;
     --primary-foreground: 0 0% 100%;
     --secondary: 230 15% 18%;
     --secondary-foreground: 210 15% 90%;
     --muted: 230 12% 22%;
     --muted-foreground: 210 15% 60%;
-    --accent: 20 90% 50%;
+    --accent: 15 90% 55%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
     --border: 225 15% 25%;
     --input: 230 15% 18%;
-    --ring: 28 95% 55%;
+    --ring: 35 95% 55%;
   }
 }
 
@@ -91,9 +91,9 @@
   body {
     @apply bg-background text-foreground antialiased;
     background-image: 
-      radial-gradient(ellipse at top, hsl(28 95% 55% / 0.12), transparent 50%),
-      radial-gradient(ellipse at bottom right, hsl(35 95% 55% / 0.08), transparent 50%),
-      radial-gradient(ellipse at bottom left, hsl(15 90% 50% / 0.06), transparent 40%),
+      radial-gradient(ellipse at top, hsl(35 95% 55% / 0.1), transparent 50%),
+      radial-gradient(ellipse at bottom right, hsl(45 95% 55% / 0.08), transparent 50%),
+      radial-gradient(ellipse at bottom left, hsl(10 90% 55% / 0.06), transparent 40%),
       linear-gradient(180deg, hsl(230 15% 8%) 0%, hsl(230 15% 5%) 100%);
     background-attachment: fixed;
     min-height: 100vh;
