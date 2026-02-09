@@ -7,10 +7,10 @@ import {
   Box, 
   Settings,
   ChevronLeft,
-  ChevronRight,
-  Hexagon
+  ChevronRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 interface NavItem {
   id: string;
@@ -46,7 +46,7 @@ export function DashboardSidebar({ activeItem, onItemClick }: DashboardSidebarPr
       {/* Logo Section */}
       <div className="flex items-center gap-3 p-6 border-b border-border/50">
         <div className="relative">
-          <Hexagon className="w-10 h-10 text-primary animate-glow-pulse" />
+          <img src={logo} alt="Logo" className="w-10 h-10 object-contain" />
           <div className="absolute inset-0 w-10 h-10 bg-primary/20 blur-xl" />
         </div>
         {!collapsed && (
