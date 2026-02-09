@@ -16,8 +16,8 @@ export function SparkLine({
   const chartData = data.map((value, index) => ({ value, index }));
   
   const gradientColor = positive 
-    ? "hsl(var(--gradient-start))" 
-    : "hsl(0, 70%, 50%)";
+    ? "hsl(0, 70%, 50%)" 
+    : "hsl(var(--gradient-start))";
   
   const strokeColor = color || gradientColor;
 
