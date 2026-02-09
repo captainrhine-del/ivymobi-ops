@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import TeamDetail from "./pages/TeamDetail";
 import Statistics from "./pages/Statistics";
 import UploadFiles from "./pages/UploadFiles";
+import MiniAppManagement from "./pages/MiniAppManagement";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/team/:teamId" element={<TeamDetail />} />
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/upload" element={<UploadFiles />} />
+          <Route path="/miniapp" element={<MiniAppManagement />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
