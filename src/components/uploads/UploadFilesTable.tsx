@@ -159,12 +159,24 @@ export function UploadFilesTable({ searchQuery }: UploadFilesTableProps) {
     }
     if (fileType === "png" || fileType === "jpg" || fileType === "jpeg") {
       return (
-        <div className="w-6 h-6 bg-muted rounded flex items-center justify-center">
-          <Image className="w-3 h-3 text-muted-foreground" />
+        <div className="w-6 h-6 bg-accent/20 rounded flex items-center justify-center">
+          <Image className="w-3 h-3 text-accent" />
         </div>
       );
     }
-    return null;
+    if (fileType === "pdf") {
+      return (
+        <div className="w-6 h-6 bg-destructive/20 rounded flex items-center justify-center">
+          <FileText className="w-3 h-3 text-destructive" />
+        </div>
+      );
+    }
+    // Default icon for other file types
+    return (
+      <div className="w-6 h-6 bg-muted rounded flex items-center justify-center">
+        <FileText className="w-3 h-3 text-muted-foreground" />
+      </div>
+    );
   };
 
   return (
