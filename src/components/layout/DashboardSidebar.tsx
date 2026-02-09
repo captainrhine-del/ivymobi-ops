@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { 
   Users, 
   BarChart3, 
@@ -15,12 +16,13 @@ interface NavItem {
   id: string;
   label: string;
   icon: React.ComponentType<{ className?: string }>;
+  path?: string;
 }
 
 const navItems: NavItem[] = [
-  { id: "teams", label: "团队目录", icon: Users },
-  { id: "statistics", label: "统计", icon: BarChart3 },
-  { id: "upload", label: "上传文件", icon: Upload },
+  { id: "teams", label: "团队目录", icon: Users, path: "/" },
+  { id: "statistics", label: "统计", icon: BarChart3, path: "/statistics" },
+  { id: "upload", label: "上传文件", icon: Upload, path: "/upload" },
   { id: "miniapp", label: "小程序托管管理", icon: Box },
   { id: "settings", label: "设置", icon: Settings },
 ];
@@ -32,6 +34,7 @@ interface DashboardSidebarProps {
 
 export function DashboardSidebar({ activeItem, onItemClick }: DashboardSidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <aside 
@@ -63,7 +66,12 @@ export function DashboardSidebar({ activeItem, onItemClick }: DashboardSidebarPr
           return (
             <button
               key={item.id}
-              onClick={() => onItemClick(item.id)}
+              onClick={() => {
+                onItemClick(item.id);
+                if (item.path) {
+                  navigate(item.path);
+                }
+              }}
               className={cn(
                 "nav-item w-full text-left group",
                 isActive && "active"
