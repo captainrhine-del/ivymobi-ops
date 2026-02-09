@@ -15,6 +15,8 @@ export default function Statistics() {
     setActiveNavItem(id);
     if (id === "teams") {
       navigate("/");
+    } else if (id === "upload") {
+      navigate("/upload");
     }
   };
 

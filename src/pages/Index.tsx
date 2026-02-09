@@ -16,6 +16,8 @@ const Index = () => {
     setActiveNavItem(id);
     if (id === "statistics") {
       navigate("/statistics");
+    } else if (id === "upload") {
+      navigate("/upload");
     }
   };
 
