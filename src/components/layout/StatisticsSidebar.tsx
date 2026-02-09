@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
   { id: "teams", label: "团队目录", icon: Users, path: "/" },
   { id: "statistics", label: "统计", icon: BarChart3, path: "/statistics" },
   { id: "upload", label: "上传文件", icon: Upload, path: "/upload" },
-  { id: "miniapp", label: "小程序托管管理", icon: Box },
+  { id: "miniapp", label: "小程序托管管理", icon: Box, path: "/miniapp" },
   { id: "settings", label: "设置", icon: Settings },
 ];
 
