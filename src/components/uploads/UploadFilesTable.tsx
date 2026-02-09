@@ -168,7 +168,8 @@ export function UploadFilesTable({ searchQuery }: UploadFilesTableProps) {
   };
 
   return (
-    <div className="glass-card rounded-lg border border-border/50 overflow-hidden">
+    <div className="glass-card rounded-lg border border-border/50 overflow-hidden max-h-[50vh] flex flex-col">
+      <div className="overflow-auto flex-1">
       <Table>
         <TableHeader>
           <TableRow className="border-border/50 hover:bg-transparent">
@@ -221,6 +222,7 @@ export function UploadFilesTable({ searchQuery }: UploadFilesTableProps) {
           ))}
         </TableBody>
       </Table>
+      </div>
 
       {/* Pagination */}
       <div className="flex items-center justify-end gap-4 p-4 border-t border-border/50">
