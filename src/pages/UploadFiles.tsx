@@ -32,9 +32,9 @@ export default function UploadFiles() {
       <div className="flex-1 flex flex-col">
         <StatisticsHeader />
         
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-6 flex flex-col overflow-hidden">
           {/* Filters Bar */}
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-4 shrink-0">
           <DateRangePicker
               startDate={startDate}
               endDate={endDate}
@@ -68,7 +68,9 @@ export default function UploadFiles() {
           </div>
 
           {/* Files Table */}
-          <UploadFilesTable searchQuery={searchQuery} />
+          <div className="flex-1 overflow-hidden">
+            <UploadFilesTable searchQuery={searchQuery} />
+          </div>
         </main>
       </div>
     </div>

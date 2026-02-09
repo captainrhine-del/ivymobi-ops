@@ -152,15 +152,15 @@ export function UploadFilesTable({ searchQuery }: UploadFilesTableProps) {
   const getFileIcon = (fileType: string, hasThumbnail?: string) => {
     if (hasThumbnail === "video") {
       return (
-        <div className="w-12 h-12 bg-muted rounded flex items-center justify-center">
-          <FileText className="w-6 h-6 text-muted-foreground" />
+        <div className="w-6 h-6 bg-muted rounded flex items-center justify-center">
+          <FileText className="w-3 h-3 text-muted-foreground" />
         </div>
       );
     }
     if (fileType === "png" || fileType === "jpg" || fileType === "jpeg") {
       return (
-        <div className="w-12 h-12 bg-muted rounded flex items-center justify-center">
-          <Image className="w-6 h-6 text-muted-foreground" />
+        <div className="w-6 h-6 bg-muted rounded flex items-center justify-center">
+          <Image className="w-3 h-3 text-muted-foreground" />
         </div>
       );
     }
@@ -168,32 +168,32 @@ export function UploadFilesTable({ searchQuery }: UploadFilesTableProps) {
   };
 
   return (
-    <div className="glass-card rounded-lg border border-border/50 overflow-hidden max-h-[50vh] flex flex-col">
+    <div className="glass-card rounded-lg border border-border/50 overflow-hidden flex flex-col flex-1">
       <div className="overflow-auto flex-1">
       <Table>
         <TableHeader>
-          <TableRow className="border-border/50 hover:bg-transparent">
-            <TableHead className="text-muted-foreground font-medium w-20">缩略图</TableHead>
-            <TableHead className="text-muted-foreground font-medium">文件名称</TableHead>
-            <TableHead className="text-muted-foreground font-medium w-24">文件类型</TableHead>
-            <TableHead className="text-muted-foreground font-medium w-28">上传时间</TableHead>
-            <TableHead className="text-muted-foreground font-medium w-20">上传者</TableHead>
-            <TableHead className="text-muted-foreground font-medium w-32">上传者手机号</TableHead>
-            <TableHead className="text-muted-foreground font-medium">所属团队</TableHead>
-            <TableHead className="text-muted-foreground font-medium w-20">文件状态</TableHead>
-            <TableHead className="text-muted-foreground font-medium w-16">操作</TableHead>
+          <TableRow className="border-border/50 hover:bg-transparent h-8">
+            <TableHead className="text-muted-foreground font-medium w-16 py-1 text-xs">缩略图</TableHead>
+            <TableHead className="text-muted-foreground font-medium py-1 text-xs">文件名称</TableHead>
+            <TableHead className="text-muted-foreground font-medium w-20 py-1 text-xs">文件类型</TableHead>
+            <TableHead className="text-muted-foreground font-medium w-24 py-1 text-xs">上传时间</TableHead>
+            <TableHead className="text-muted-foreground font-medium w-16 py-1 text-xs">上传者</TableHead>
+            <TableHead className="text-muted-foreground font-medium w-28 py-1 text-xs">上传者手机号</TableHead>
+            <TableHead className="text-muted-foreground font-medium py-1 text-xs">所属团队</TableHead>
+            <TableHead className="text-muted-foreground font-medium w-16 py-1 text-xs">文件状态</TableHead>
+            <TableHead className="text-muted-foreground font-medium w-14 py-1 text-xs">操作</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {filteredFiles.map((file) => (
-            <TableRow key={file.id} className="border-border/50 hover:bg-muted/30">
-              <TableCell>
+            <TableRow key={file.id} className="border-border/50 hover:bg-muted/30 h-8">
+              <TableCell className="py-1">
                 {getFileIcon(file.fileType, file.thumbnail)}
               </TableCell>
-              <TableCell>
+              <TableCell className="py-1">
                 <a 
                   href="#" 
-                  className="text-primary hover:underline truncate block max-w-md"
+                  className="text-primary hover:underline truncate block max-w-md text-xs"
                   onClick={(e) => {
                     e.preventDefault();
                     console.log("View file:", file.fileName);
@@ -202,17 +202,17 @@ export function UploadFilesTable({ searchQuery }: UploadFilesTableProps) {
                   {file.fileName}
                 </a>
               </TableCell>
-              <TableCell className="text-muted-foreground">{file.fileType}</TableCell>
-              <TableCell className="text-muted-foreground">{file.uploadTime}</TableCell>
-              <TableCell className="text-muted-foreground">{file.uploader || "-"}</TableCell>
-              <TableCell className="text-muted-foreground">{file.uploaderPhone || "-"}</TableCell>
-              <TableCell className="text-muted-foreground truncate max-w-xs">{file.team}</TableCell>
-              <TableCell className="text-muted-foreground">{file.status}</TableCell>
-              <TableCell>
+              <TableCell className="text-muted-foreground py-1 text-xs">{file.fileType}</TableCell>
+              <TableCell className="text-muted-foreground py-1 text-xs">{file.uploadTime}</TableCell>
+              <TableCell className="text-muted-foreground py-1 text-xs">{file.uploader || "-"}</TableCell>
+              <TableCell className="text-muted-foreground py-1 text-xs">{file.uploaderPhone || "-"}</TableCell>
+              <TableCell className="text-muted-foreground truncate max-w-xs py-1 text-xs">{file.team}</TableCell>
+              <TableCell className="text-muted-foreground py-1 text-xs">{file.status}</TableCell>
+              <TableCell className="py-1">
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-destructive hover:text-destructive hover:bg-destructive/10 px-2"
+                  className="text-destructive hover:text-destructive hover:bg-destructive/10 px-1 h-6 text-xs"
                   onClick={() => handleDelete(file.id)}
                 >
                   删除
@@ -225,7 +225,7 @@ export function UploadFilesTable({ searchQuery }: UploadFilesTableProps) {
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-end gap-4 p-4 border-t border-border/50">
+      <div className="flex items-center justify-end gap-4 px-4 py-2 border-t border-border/50">
         <div className="flex items-center gap-2">
           <span className="text-sm text-muted-foreground">每页行数</span>
           <Select
