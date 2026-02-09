@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { DashboardSidebar } from "@/components/layout/DashboardSidebar";
 import { DashboardHeader } from "@/components/layout/DashboardHeader";
 import { TeamStats } from "@/components/teams/TeamStats";
@@ -9,13 +10,21 @@ const Index = () => {
   const [activeNavItem, setActiveNavItem] = useState("teams");
   const [searchQuery, setSearchQuery] = useState("");
   const [versionFilter, setVersionFilter] = useState("all");
+  const navigate = useNavigate();
+
+  const handleNavItemClick = (id: string) => {
+    setActiveNavItem(id);
+    if (id === "statistics") {
+      navigate("/statistics");
+    }
+  };
 
   return (
     <div className="flex min-h-screen w-full">
       {/* Sidebar */}
       <DashboardSidebar 
         activeItem={activeNavItem} 
-        onItemClick={setActiveNavItem} 
+        onItemClick={handleNavItemClick} 
       />
 
       {/* Main Content */}
