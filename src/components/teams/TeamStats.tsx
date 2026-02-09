@@ -67,7 +67,7 @@ export function TeamStats() {
                 className={`text-xs font-medium px-2 py-0.5 rounded-full ${
                   stat.positive 
                     ? "text-destructive bg-destructive/10 shadow-sm shadow-destructive/20" 
-                    : "text-primary bg-primary/10 shadow-sm shadow-primary/20"
+                    : "text-emerald-400 bg-emerald-400/10 shadow-sm shadow-emerald-400/20"
                 }`}
               >
                 {stat.change}
